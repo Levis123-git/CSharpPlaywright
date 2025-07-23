@@ -1,4 +1,4 @@
-name: CI .NET Tests
+name: CI - .NET Testes
 
 on:
   push:
@@ -7,39 +7,32 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  build-and-test:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout do código
-        uses: actions/checkout@v3
+    - name: Checkout do código
+      uses: actions/checkout@v3
 
-      - name: Instalar .NET
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '8.0.x'
+    - name: Instalar .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
 
-      - name: Restaurar dependências
-        run: dotnet restore
+    - name: Restaurar dependências
+      run: dotnet restore
 
-      - name: Compilar projeto
-        run: dotnet build --configuration Debug
+    - name: Compilar o projeto
+      run: dotnet build --configuration Debug
 
-      - name: Instalar navegadores do Playwright
-        run: pwsh -Command "& './bin/Debug/net8.0/playwright.ps1' install"
+    - name: Instalar ferramenta CLI do Playwright
+      run: dotnet tool install --global Microsoft.Playwright.CLI
 
-      - name: Executar testes e gerar TRX
-        run: dotnet test --no-build --configuration Debug --logger "trx;LogFileName=resultado.trx" --results-directory TestResults
+    - name: Adicionar ferramenta global ao PATH
+      run: echo "${{ runner.tool_cache }}/dotnet/tools" >> $GITHUB_PATH
 
-      - name: Baixar ReportUnit
-        run: |
-          Invoke-WebRequest https://github.com/jsreport/reportunit/releases/download/1.5.0/ReportUnit.exe -OutFile ReportUnit.exe
+    - name: Instalar navegadores do Playwright
+      run: playwright install
 
-      - name: Gerar relatório HTML com ReportUnit
-        run: ./ReportUnit.exe TestResults TestResults
-
-      - name: Upload do relatório HTML
-        uses: actions/upload-artifact@v4
-        with:
-          name: Relatorio-Testes
-          path: TestResults/resultado.html
+    - name: Rodar testes
+      run: dotnet test --logger:"trx;LogFileName=resultado.trx"
