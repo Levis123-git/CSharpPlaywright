@@ -1,4 +1,4 @@
-name: CI .NET testes
+name: CI .NET Tests
 
 on:
   push:
@@ -22,26 +22,24 @@ jobs:
       - name: Restaurar dependências
         run: dotnet restore
 
-      - name: Compilar o projeto
+      - name: Compilar projeto
         run: dotnet build --configuration Debug
 
       - name: Instalar navegadores do Playwright
         run: pwsh -Command "& './bin/Debug/net8.0/playwright.ps1' install"
 
-      - name: Rodar testes e gerar TRX
+      - name: Executar testes e gerar TRX
         run: dotnet test --no-build --configuration Debug --logger "trx;LogFileName=resultado.trx" --results-directory TestResults
 
-      - name: Instalar dotnet-trx-to-html
-        run: dotnet tool install --global dotnet-trx-to-html
+      - name: Baixar ReportUnit
+        run: |
+          Invoke-WebRequest https://github.com/jsreport/reportunit/releases/download/1.5.0/ReportUnit.exe -OutFile ReportUnit.exe
 
-      - name: Adicionar ferramenta ao PATH
-        run: echo "$env:USERPROFILE\.dotnet\tools" | Out-File -Append -Encoding ascii $env:GITHUB_PATH
+      - name: Gerar relatório HTML com ReportUnit
+        run: ./ReportUnit.exe TestResults TestResults
 
-      - name: Gerar relatório HTML do TRX
-        run: dotnet-trx-to-html TestResults/resultado.trx -o TestResults/relatorio.html
-
-      - name: Upload do relatório de testes
+      - name: Upload do relatório HTML
         uses: actions/upload-artifact@v4
         with:
           name: Relatorio-Testes
-          path: TestResults/relatorio.html
+          path: TestResults/resultado.html
