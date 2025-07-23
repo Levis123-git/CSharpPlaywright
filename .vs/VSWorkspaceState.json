@@ -1,12 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\elementos",
-    "\\metodos",
-    "\\pages",
-    "\\runner",
     "\\testes"
   ],
-  "SelectedNode": "\\PlaywrightTests.csproj",
+  "SelectedNode": "\\testes\\LoginTests.cs",
   "PreviewInSolutionExplorer": false
 }

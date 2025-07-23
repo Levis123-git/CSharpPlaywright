@@ -2,13 +2,21 @@
 using NUnit.Framework;
 using PlaywrightTests.runner;
 using PlaywrightTests.pages;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
+using Allure.Commons;
 
 namespace PlaywrightTests.testes.LoginTests
 {
     [TestFixture]
+    [AllureNUnit]
+    [AllureSuite("Login")]
     public class LoginTests : Executa
     {
         [Test]
+        [AllureSubSuite("Login com sucesso")]
+        [AllureTag("positivo")]
+        [AllureOwner("Levi")]
         public async Task deveRealizarLoginComSucesso()
         {
             var login = new LoginPage(Page);
@@ -16,6 +24,9 @@ namespace PlaywrightTests.testes.LoginTests
         }
 
         [Test]
+        [AllureSubSuite("Senha inválida")]
+        [AllureTag("negativo")]
+        [AllureOwner("Levi")]
         public async Task naodeveRealizarLoginComSenhaInv()
         {
             var login = new LoginPage(Page);
@@ -23,6 +34,9 @@ namespace PlaywrightTests.testes.LoginTests
         }
 
         [Test]
+        [AllureSubSuite("Campos em branco")]
+        [AllureTag("negativo")]
+        [AllureOwner("Levi")]
         public async Task naodeveRealizarLoginComCamposEmBranco()
         {
             var login = new LoginPage(Page);

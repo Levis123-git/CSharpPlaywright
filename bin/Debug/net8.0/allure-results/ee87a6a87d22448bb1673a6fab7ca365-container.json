@@ -1,0 +1,12 @@
+{
+  "uuid": "6a77adef-2ea9-4db0-8480-7ae9d2749ccb",
+  "name": "PlaywrightTests.testes.LoginTests.LoginTests.deveRealizarLoginComSucesso",
+  "children": [
+    "d9aba9d1-b424-48f5-879b-82b8cb533fed"
+  ],
+  "befores": [],
+  "afters": [],
+  "links": [],
+  "start": 1753281632981,
+  "stop": 1753281634228
+}

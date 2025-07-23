@@ -1,5 +1,5 @@
 {
   "allure": {
-    "directory": "D:\\personalProjects\\poc\\PlaywrightTests\\testsResults"   
+    "directory": "allure-results"
   }
 }

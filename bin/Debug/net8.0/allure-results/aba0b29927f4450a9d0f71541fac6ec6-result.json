@@ -1,0 +1,61 @@
+{
+  "uuid": "3c3dadf9-67b7-4d27-bb40-1f42505d3187",
+  "historyId": "a5264af01c3b178b0430ff3de9c5b4ca",
+  "testCaseId": "beacc254972de767f0592871c6ec8910",
+  "fullName": "PlaywrightTests:PlaywrightTests.testes.LoginTests.LoginTests.naodeveRealizarLoginComSenhaInv()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "ZITEC0029"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "PlaywrightTests.testes.LoginTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "naodeveRealizarLoginComSenhaInv"
+    },
+    {
+      "name": "testClass",
+      "value": "LoginTests"
+    },
+    {
+      "name": "subSuite",
+      "value": "Senha inválida"
+    },
+    {
+      "name": "tag",
+      "value": "negativo"
+    },
+    {
+      "name": "owner",
+      "value": "Levi"
+    },
+    {
+      "name": "suite",
+      "value": "Login"
+    }
+  ],
+  "links": [],
+  "name": "naodeveRealizarLoginComSenhaInv",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1753287477284,
+  "stop": 1753287478379
+}

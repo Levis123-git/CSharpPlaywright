@@ -13,8 +13,7 @@
           "Microsoft.NET.Test.Sdk": "17.12.0",
           "Microsoft.Playwright": "1.53.0",
           "NUnit": "4.0.0",
-          "NUnit3TestAdapter": "4.5.0",
-          "coverlet.collector": "6.0.2"
+          "NUnit3TestAdapter": "4.5.0"
         },
         "runtime": {
           "PlaywrightTests.dll": {}
@@ -66,7 +65,6 @@
           }
         }
       },
-      "coverlet.collector/6.0.2": {},
       "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
@@ -427,13 +425,6 @@
       "sha512": "sha512-8BScDeaLazJVFaa2Tt9hoWLhllnxXP3Sew+l/vktdZEcgoPOsqhlDqe6GXJvy7xVkdICAbKFsrcDJ0cfrDR6Mg==",
       "path": "aspectinjector/2.8.1",
       "hashPath": "aspectinjector.2.8.1.nupkg.sha512"
-    },
-    "coverlet.collector/6.0.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-bJShQ6uWRTQ100ZeyiMqcFlhP7WJ+bCuabUs885dJiBEzMsJMSFr7BOyeCw4rgvQokteGi5rKQTlkhfQPUXg2A==",
-      "path": "coverlet.collector/6.0.2",
-      "hashPath": "coverlet.collector.6.0.2.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
       "type": "package",

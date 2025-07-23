@@ -1,0 +1,61 @@
+{
+  "uuid": "c1f4a756-213a-4563-9408-53a2e57e85ff",
+  "historyId": "71d705038afbfe246a1df0ce35940083",
+  "testCaseId": "1868510c2e4b60516d334a77c4f7e5d6",
+  "fullName": "PlaywrightTests:PlaywrightTests.testes.LoginTests.LoginTests.deveRealizarLoginComSucesso()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "ZITEC0029"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "PlaywrightTests.testes.LoginTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "deveRealizarLoginComSucesso"
+    },
+    {
+      "name": "testClass",
+      "value": "LoginTests"
+    },
+    {
+      "name": "subSuite",
+      "value": "Login com sucesso"
+    },
+    {
+      "name": "tag",
+      "value": "positivo"
+    },
+    {
+      "name": "owner",
+      "value": "Levi"
+    },
+    {
+      "name": "suite",
+      "value": "Login"
+    }
+  ],
+  "links": [],
+  "name": "deveRealizarLoginComSucesso",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1753287472411,
+  "stop": 1753287476131
+}

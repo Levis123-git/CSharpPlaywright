@@ -1,0 +1,61 @@
+{
+  "uuid": "2e3328cb-e45d-4233-a465-9384f8ab2a46",
+  "historyId": "34baa7dce69cb81abc32614cc5690c72",
+  "testCaseId": "e92e7b12d0833167f4005853a75c617e",
+  "fullName": "PlaywrightTests:PlaywrightTests.testes.LoginTests.LoginTests.naodeveRealizarLoginComCamposEmBranco()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "ZITEC0029"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "PlaywrightTests.testes.LoginTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "naodeveRealizarLoginComCamposEmBranco"
+    },
+    {
+      "name": "testClass",
+      "value": "LoginTests"
+    },
+    {
+      "name": "subSuite",
+      "value": "Campos em branco"
+    },
+    {
+      "name": "tag",
+      "value": "negativo"
+    },
+    {
+      "name": "owner",
+      "value": "Levi"
+    },
+    {
+      "name": "suite",
+      "value": "Login"
+    }
+  ],
+  "links": [],
+  "name": "naodeveRealizarLoginComCamposEmBranco",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [],
+  "attachments": [],
+  "parameters": [],
+  "start": 1753281746064,
+  "stop": 1753281747077
+}

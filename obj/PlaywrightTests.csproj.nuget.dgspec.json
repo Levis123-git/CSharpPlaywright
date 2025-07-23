@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\personalProjects\\poc\\PlaywrightTests\\PlaywrightTests.csproj": {}
+    "C:\\Users\\LeviAlves\\Source\\Repos\\CSharpPlaywright\\PlaywrightTests.csproj": {}
   },
   "projects": {
-    "D:\\personalProjects\\poc\\PlaywrightTests\\PlaywrightTests.csproj": {
+    "C:\\Users\\LeviAlves\\Source\\Repos\\CSharpPlaywright\\PlaywrightTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\personalProjects\\poc\\PlaywrightTests\\PlaywrightTests.csproj",
+        "projectUniqueName": "C:\\Users\\LeviAlves\\Source\\Repos\\CSharpPlaywright\\PlaywrightTests.csproj",
         "projectName": "PlaywrightTests",
-        "projectPath": "D:\\personalProjects\\poc\\PlaywrightTests\\PlaywrightTests.csproj",
-        "packagesPath": "C:\\Users\\Levis\\.nuget\\packages\\",
-        "outputPath": "D:\\personalProjects\\poc\\PlaywrightTests\\obj\\",
+        "projectPath": "C:\\Users\\LeviAlves\\Source\\Repos\\CSharpPlaywright\\PlaywrightTests.csproj",
+        "packagesPath": "C:\\Users\\LeviAlves\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LeviAlves\\Source\\Repos\\CSharpPlaywright\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Levis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LeviAlves\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -73,10 +73,6 @@
             "NUnit3TestAdapter": {
               "target": "Package",
               "version": "[4.5.0, )"
-            },
-            "coverlet.collector": {
-              "target": "Package",
-              "version": "[6.0.2, )"
             }
           },
           "imports": [

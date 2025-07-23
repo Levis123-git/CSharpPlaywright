@@ -1,0 +1,12 @@
+{
+  "uuid": "6df6fd62-3d76-45b6-b1ec-8d22ee5a9025",
+  "name": "PlaywrightTests.testes.LoginTests.LoginTests.naodeveRealizarLoginComCamposEmBranco",
+  "children": [
+    "b4a633f6-3739-48a8-9a9c-9e08a6ce6c1c"
+  ],
+  "befores": [],
+  "afters": [],
+  "links": [],
+  "start": 1753287789409,
+  "stop": 1753287790615
+}
