@@ -28,7 +28,7 @@ jobs:
       - name: Instalar Playwright CLI
         run: dotnet tool install --global Microsoft.Playwright.CLI
 
-      - name: Adicionar Playwright no PATH
+      - name: Adicionar Playwright ao PATH
         run: echo "$env:USERPROFILE\.dotnet\tools" | Out-File -Append -Encoding ascii $env:GITHUB_PATH
 
       - name: Instalar navegadores do Playwright
@@ -37,12 +37,19 @@ jobs:
       - name: Rodar testes e gerar TRX
         run: dotnet test --logger "trx;LogFileName=resultado.trx" --results-directory TestResults
 
-      - name: Baixar trx2html.exe corretamente
-        run: curl -Lo trx2html.exe https://github.com/gmarchetti/trx2html/releases/download/v0.9.0/trx2html.exe
-
-      - name: Gerar relatório HTML do TRX
-        shell: cmd
-        run: trx2html.exe TestResults\resultado.trx TestResults\relatorio.html
+      - name: Converter TRX para HTML com PowerShell
+        shell: pwsh
+        run: |
+          $trx = "TestResults/resultado.trx"
+          $html = "TestResults/relatorio.html"
+          $content = Get-Content $trx
+          $report = @"
+          <html><head><title>Relatório de Testes</title></head><body>
+          <h1>Relatório de Testes</h1>
+          <pre>$content</pre>
+          </body></html>
+          "@
+          $report | Out-File -FilePath $html -Encoding utf8
 
       - name: Upload do relatório HTML
         uses: actions/upload-artifact@v4
