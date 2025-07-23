@@ -25,10 +25,13 @@ jobs:
       - name: Compilar o projeto
         run: dotnet build --configuration Debug
 
+      - name: Instalar navegadores do Playwright
+        run: pwsh "$(Get-ChildItem -Path ./bin/Debug/net*/playwright.ps1 -Recurse | Select-Object -First 1).FullName" install
+
       - name: Rodar testes e gerar TRX
         run: dotnet test --logger "trx;LogFileName=resultado.trx" --results-directory TestResults
 
-      - name: Baixar trx2html
+      - name: Baixar trx2html.exe
         run: curl -LJO https://github.com/gmarchetti/trx2html/releases/download/v0.9.0/trx2html.exe
 
       - name: Gerar relatório HTML do TRX
