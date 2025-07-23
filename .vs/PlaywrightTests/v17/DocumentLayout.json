@@ -1,0 +1,117 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\personalProjects\\poc\\PlaywrightTests\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\personalProjects\\poc\\PlaywrightTests\\PlaywrightTests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PlaywrightTests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\personalProjects\\poc\\PlaywrightTests\\runner\\Executa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:runner\\Executa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\personalProjects\\poc\\PlaywrightTests\\pages\\LoginPage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\LoginPage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\personalProjects\\poc\\PlaywrightTests\\elementos\\LoginElements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:elementos\\LoginElements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\personalProjects\\poc\\PlaywrightTests\\testes\\LoginTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:testes\\LoginTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\personalProjects\\poc\\PlaywrightTests\\metodos\\Metodos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:metodos\\Metodos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlaywrightTests.csproj",
+              "DocumentMoniker": "D:\\personalProjects\\poc\\PlaywrightTests\\PlaywrightTests.csproj",
+              "RelativeDocumentMoniker": "PlaywrightTests.csproj",
+              "ToolTip": "D:\\personalProjects\\poc\\PlaywrightTests\\PlaywrightTests.csproj",
+              "RelativeToolTip": "PlaywrightTests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-23T05:32:08.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Executa.cs",
+              "DocumentMoniker": "D:\\personalProjects\\poc\\PlaywrightTests\\runner\\Executa.cs",
+              "RelativeDocumentMoniker": "runner\\Executa.cs",
+              "ToolTip": "D:\\personalProjects\\poc\\PlaywrightTests\\runner\\Executa.cs",
+              "RelativeToolTip": "runner\\Executa.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T16:21:44.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginPage.cs",
+              "DocumentMoniker": "D:\\personalProjects\\poc\\PlaywrightTests\\pages\\LoginPage.cs",
+              "RelativeDocumentMoniker": "pages\\LoginPage.cs",
+              "ToolTip": "D:\\personalProjects\\poc\\PlaywrightTests\\pages\\LoginPage.cs",
+              "RelativeToolTip": "pages\\LoginPage.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAqwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T17:08:26.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginElements.cs",
+              "DocumentMoniker": "D:\\personalProjects\\poc\\PlaywrightTests\\elementos\\LoginElements.cs",
+              "RelativeDocumentMoniker": "elementos\\LoginElements.cs",
+              "ToolTip": "D:\\personalProjects\\poc\\PlaywrightTests\\elementos\\LoginElements.cs",
+              "RelativeToolTip": "elementos\\LoginElements.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T16:54:05.921Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Metodos.cs",
+              "DocumentMoniker": "D:\\personalProjects\\poc\\PlaywrightTests\\metodos\\Metodos.cs",
+              "RelativeDocumentMoniker": "metodos\\Metodos.cs",
+              "ToolTip": "D:\\personalProjects\\poc\\PlaywrightTests\\metodos\\Metodos.cs",
+              "RelativeToolTip": "metodos\\Metodos.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAEMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T16:56:06.269Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginTests.cs",
+              "DocumentMoniker": "D:\\personalProjects\\poc\\PlaywrightTests\\testes\\LoginTests.cs",
+              "RelativeDocumentMoniker": "testes\\LoginTests.cs",
+              "ToolTip": "D:\\personalProjects\\poc\\PlaywrightTests\\testes\\LoginTests.cs",
+              "RelativeToolTip": "testes\\LoginTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T16:16:03.149Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
