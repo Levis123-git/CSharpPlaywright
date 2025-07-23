@@ -1,4 +1,4 @@
-name: CI - .NET Testes
+name: CI HTML relatorio
 
 on:
   push:
@@ -25,26 +25,26 @@ jobs:
       - name: Compilar o projeto
         run: dotnet build --configuration Debug
 
-      - name: Instalar ferramenta CLI do Playwright
+      - name: Instalar Playwright CLI
         run: dotnet tool install --global Microsoft.Playwright.CLI
 
-      - name: Adicionar ferramenta global ao PATH
+      - name: Adicionar Playwright CLI ao PATH
         run: echo "${{ runner.tool_cache }}/dotnet/tools" >> $GITHUB_PATH
 
       - name: Instalar navegadores do Playwright
         run: playwright install
 
-      - name: Rodar testes e gerar .trx
-        run: dotnet test --logger:"trx;LogFileName=resultado.trx"
+      - name: Rodar testes e gerar arquivo TRX
+        run: dotnet test --logger "trx;LogFileName=resultado.trx" --results-directory "TestResults"
 
-      - name: Instalar trx2html
-        run: dotnet tool install -g trx2html
+      - name: Instalar ReportGenerator
+        run: dotnet tool install -g dotnet-reportgenerator-globaltool
 
-      - name: Converter TRX em HTML
-        run: trx2html $(find . -name "resultado.trx") ./TestResults/relatorio.html
+      - name: Gerar relatório HTML dos testes
+        run: reportgenerator -reports:TestResults/resultado.trx -targetdir:TestResults/html -reporttypes:Html
 
       - name: Upload do relatório HTML
         uses: actions/upload-artifact@v4
         with:
           name: Relatorio-Testes-HTML
-          path: ./TestResults/relatorio.html
+          path: TestResults/html/index.htm
