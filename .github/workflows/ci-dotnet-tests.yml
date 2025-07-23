@@ -28,17 +28,20 @@ jobs:
       - name: Instalar navegadores do Playwright
         run: pwsh -Command "& './bin/Debug/net8.0/playwright.ps1' install"
 
-      - name: Rodar testes com logger TRX
+      - name: Rodar testes e gerar TRX
         run: dotnet test --no-build --configuration Debug --logger "trx;LogFileName=resultado.trx" --results-directory TestResults
 
-      - name: Baixar trx2html
-        run: curl -LJO https://github.com/gmarchetti/trx2html/releases/download/v0.9.0/trx2html.exe
+      - name: Instalar dotnet-trx-to-html
+        run: dotnet tool install --global dotnet-trx-to-html
+
+      - name: Adicionar ferramenta ao PATH
+        run: echo "$env:USERPROFILE\.dotnet\tools" | Out-File -Append -Encoding ascii $env:GITHUB_PATH
 
       - name: Gerar relatório HTML do TRX
-        run: ./trx2html.exe TestResults/resultado.trx TestResults/relatorio.html
+        run: dotnet-trx-to-html TestResults/resultado.trx -o TestResults/relatorio.html
 
       - name: Upload do relatório de testes
         uses: actions/upload-artifact@v4
         with:
-          name: Relatorio-Testes-Executados
+          name: Relatorio-Testes
           path: TestResults/relatorio.html
