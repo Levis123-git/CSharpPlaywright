@@ -36,3 +36,9 @@ jobs:
 
     - name: Rodar testes
       run: dotnet test --logger:"trx;LogFileName=resultado.trx"
+
+    - name: Publicar artefato de resultados TRX
+      uses: actions/upload-artifact@v3
+      with:
+        name: TestResults
+        path: '**/TestResults/*.trx'
