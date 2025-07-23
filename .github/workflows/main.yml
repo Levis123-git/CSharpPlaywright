@@ -22,6 +22,9 @@ jobs:
       - name: Restaurar dependências
         run: dotnet restore
 
+      - name: Instalar navegadores do Playwright
+        run: pwsh ./bin/Debug/net8.0/playwright.ps1 install
+
       - name: Rodar testes
         run: dotnet test --logger "trx;LogFileName=resultado.trx"
 
