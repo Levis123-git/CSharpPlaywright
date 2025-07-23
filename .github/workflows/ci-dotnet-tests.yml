@@ -1,4 +1,5 @@
 name: CI Testes com Relatório HTML
+
 on:
   push:
     branches: [ main ]
@@ -23,22 +24,22 @@ jobs:
 
       - name: Compilar solução
         run: dotnet build --configuration Debug
-      - name: Rodar testes com cobertura
-        run: |
-          dotnet test Zitec.Tests.csproj --no-build --configuration Debug `
-            /p:CollectCoverage=true `
-            /p:CoverletOutput=TestResults/coverage.json `
-            /p:CoverletOutputFormat=cobertura `
-            /p:ExcludeByAttribute="GeneratedCodeAttribute"
 
-      - name: Baixar ReportGenerator
+      - name: Rodar testes e gerar arquivo TRX
+        run: dotnet test --no-build --configuration Debug --logger "trx;LogFileName=resultado.trx" --results-directory TestResults
+
+      - name: Instalar ReportGenerator
         run: dotnet tool install --global dotnet-reportgenerator-globaltool
 
       - name: Adicionar ReportGenerator ao PATH
         run: echo "$env:USERPROFILE\.dotnet\tools" | Out-File -Append -Encoding ascii $env:GITHUB_PATH
 
-      - name: Gerar relatório HTML
-        run: reportgenerator -reports:TestResults/coverage.cobertura.xml -targetdir:TestResults/HtmlReport -reporttypes:Html
+      - name: Gerar relatório HTML a partir do TRX
+        run: |
+          reportgenerator `
+            -reports:"TestResults/resultado.trx" `
+            -targetdir:"TestResults/HtmlReport" `
+            -reporttypes:Html
 
       - name: Upload do relatório HTML
         uses: actions/upload-artifact@v4
