@@ -11,36 +11,40 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout do código
-      uses: actions/checkout@v3
+      - name: Checkout do código
+        uses: actions/checkout@v3
 
-    - name: Instalar .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '8.0.x'
+      - name: Instalar .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
 
-    - name: Restaurar dependências
-      run: dotnet restore
+      - name: Restaurar dependências
+        run: dotnet restore
 
-    - name: Compilar o projeto
-      run: dotnet build --configuration Debug
+      - name: Compilar o projeto
+        run: dotnet build --configuration Debug
 
-    - name: Instalar ferramenta CLI do Playwright
-      run: dotnet tool install --global Microsoft.Playwright.CLI
+      - name: Instalar ferramenta CLI do Playwright
+        run: dotnet tool install --global Microsoft.Playwright.CLI
 
-    - name: Adicionar ferramenta global ao PATH
-      run: echo "${{ runner.tool_cache }}/dotnet/tools" >> $GITHUB_PATH
+      - name: Adicionar ferramenta global ao PATH
+        run: echo "${{ runner.tool_cache }}/dotnet/tools" >> $GITHUB_PATH
 
-    - name: Instalar navegadores do Playwright
-      run: playwright install
+      - name: Instalar navegadores do Playwright
+        run: playwright install
 
-    - name: Rodar testes
-      run: dotnet test --logger:"trx;LogFileName=resultado.trx"
+      - name: Rodar testes e gerar .trx
+        run: dotnet test --logger:"trx;LogFileName=resultado.trx"
 
-    - name: Instalar trx2html
-      run: dotnet tool install -g trx2html
+      - name: Instalar trx2html
+        run: dotnet tool install -g trx2html
 
-    - name: Gerar relatório HTML a partir do TRX
-      run: trx2html ./**/TestResults/resultado.trx ./TestResults/relatorio.html
+      - name: Converter TRX em HTML
+        run: trx2html $(find . -name "resultado.trx") ./TestResults/relatorio.html
 
-    - name: Upload do relatório HT
+      - name: Upload do relatório HTML
+        uses: actions/upload-artifact@v4
+        with:
+          name: Relatorio-Testes-HTML
+          path: ./TestResults/relatorio.html
