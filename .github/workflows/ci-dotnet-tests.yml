@@ -11,16 +11,25 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout do código
-      uses: actions/checkout@v3
+      - name: Checkout do código
+        uses: actions/checkout@v3
 
-    - name: Instalar .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '8.0.x'
+      - name: Instalar .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
 
-    - name: Restaurar dependências
-      run: dotnet restore
+      - name: Restaurar dependências
+        run: dotnet restore
 
-    - name: Rodar testes
-      run: dotnet test --logger:"trx;LogFileName=resultado.trx"
+      - name: Instalar navegadores do Playwright
+        run: pwsh ./bin/Debug/net8.0/playwright.ps1 install
+
+      - name: Rodar testes
+        run: dotnet test --logger "trx;LogFileName=resultado.trx"
+
+      - name: Upload dos resultados de teste
+        uses: actions/upload-artifact@v3
+        with:
+          name: relatorio-de-testes
+          path: '**/TestResults/*.trx'
