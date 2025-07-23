@@ -36,3 +36,11 @@ jobs:
 
     - name: Rodar testes
       run: dotnet test --logger:"trx;LogFileName=resultado.trx"
+
+    - name: Instalar trx2html
+      run: dotnet tool install -g trx2html
+
+    - name: Gerar relatório HTML a partir do TRX
+      run: trx2html ./**/TestResults/resultado.trx ./TestResults/relatorio.html
+
+    - name: Upload do relatório HT
