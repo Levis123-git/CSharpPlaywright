@@ -1,5 +1,4 @@
 name: CI Testes com Relatório HTML
-
 on:
   push:
     branches: [ main ]
@@ -7,7 +6,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build-and-test:
+  test:
     runs-on: windows-latest
 
     steps:
@@ -22,37 +21,28 @@ jobs:
       - name: Restaurar dependências
         run: dotnet restore
 
-      - name: Compilar o projeto
+      - name: Compilar solução
         run: dotnet build --configuration Debug
 
-      - name: Instalar Playwright CLI
-        run: dotnet tool install --global Microsoft.Playwright.CLI
+      - name: Rodar testes com cobertura
+        run: |
+          dotnet test --no-build --configuration Debug \
+            /p:CollectCoverage=true \
+            /p:CoverletOutput=TestResults/coverage.json \
+            /p:CoverletOutputFormat=cobertura \
+            /p:ExcludeByAttribute="GeneratedCodeAttribute"
 
-      - name: Adicionar Playwright ao PATH
+      - name: Baixar ReportGenerator
+        run: dotnet tool install --global dotnet-reportgenerator-globaltool
+
+      - name: Adicionar ReportGenerator ao PATH
         run: echo "$env:USERPROFILE\.dotnet\tools" | Out-File -Append -Encoding ascii $env:GITHUB_PATH
 
-      - name: Instalar navegadores do Playwright
-        run: playwright install
-
-      - name: Rodar testes e gerar TRX
-        run: dotnet test --logger "trx;LogFileName=resultado.trx" --results-directory TestResults
-
-      - name: Converter TRX para HTML com PowerShell
-        shell: pwsh
-        run: |
-          $trx = "TestResults/resultado.trx"
-          $html = "TestResults/relatorio.html"
-          $content = Get-Content $trx
-          $report = @"
-          <html><head><title>Relatório de Testes</title></head><body>
-          <h1>Relatório de Testes</h1>
-          <pre>$content</pre>
-          </body></html>
-          "@
-          $report | Out-File -FilePath $html -Encoding utf8
+      - name: Gerar relatório HTML
+        run: reportgenerator -reports:TestResults/coverage.cobertura.xml -targetdir:TestResults/HtmlReport -reporttypes:Html
 
       - name: Upload do relatório HTML
         uses: actions/upload-artifact@v4
         with:
           name: Testes-Relatorio-HTML
-          path: TestResults/relatorio.html
+          path: TestResults/HtmlReport
