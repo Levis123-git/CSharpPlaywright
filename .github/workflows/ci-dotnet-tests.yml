@@ -1,4 +1,4 @@
-name: CI Testes com Relatório HTML
+name: CI .NET testes
 
 on:
   push:
@@ -22,30 +22,23 @@ jobs:
       - name: Restaurar dependências
         run: dotnet restore
 
-      - name: Compilar solução
+      - name: Compilar o projeto
         run: dotnet build --configuration Debug
 
-      - name: Instalar browsers do Playwright
-        run: pwsh bin/Debug/net8.0/playwright.ps1 install
+      - name: Instalar navegadores do Playwright
+        run: pwsh -Command "& './bin/Debug/net8.0/playwright.ps1' install"
 
-      - name: Rodar testes e gerar TRX
+      - name: Rodar testes com logger TRX
         run: dotnet test --no-build --configuration Debug --logger "trx;LogFileName=resultado.trx" --results-directory TestResults
 
-      - name: Instalar ReportGenerator
-        run: dotnet tool install --global dotnet-reportgenerator-globaltool
+      - name: Baixar trx2html
+        run: curl -LJO https://github.com/gmarchetti/trx2html/releases/download/v0.9.0/trx2html.exe
 
-      - name: Adicionar ReportGenerator ao PATH
-        run: echo "$env:USERPROFILE\.dotnet\tools" | Out-File -Append -Encoding ascii $env:GITHUB_PATH
+      - name: Gerar relatório HTML do TRX
+        run: ./trx2html.exe TestResults/resultado.trx TestResults/relatorio.html
 
-      - name: Gerar relatório HTML a partir do TRX
-        run: |
-          reportgenerator `
-            -reports:"TestResults/resultado.trx" `
-            -targetdir:"TestResults/HtmlReport" `
-            -reporttypes:Html
-
-      - name: Upload do relatório HTML
+      - name: Upload do relatório de testes
         uses: actions/upload-artifact@v4
         with:
-          name: Testes-Relatorio-HTML
-          path: TestResults/HtmlReport
+          name: Relatorio-Testes-Executados
+          path: TestResults/relatorio.html
