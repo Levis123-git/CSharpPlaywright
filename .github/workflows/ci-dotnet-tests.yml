@@ -22,5 +22,11 @@ jobs:
     - name: Restaurar dependências
       run: dotnet restore
 
+    - name: Compilar o projeto
+      run: dotnet build --configuration Debug
+
+    - name: Instalar navegadores do Playwright
+      run: dotnet playwright install
+
     - name: Rodar testes
       run: dotnet test --logger:"trx;LogFileName=resultado.trx"
