@@ -23,13 +23,12 @@ jobs:
 
       - name: Compilar solução
         run: dotnet build --configuration Debug
-
       - name: Rodar testes com cobertura
         run: |
-          dotnet test --no-build --configuration Debug \
-            /p:CollectCoverage=true \
-            /p:CoverletOutput=TestResults/coverage.json \
-            /p:CoverletOutputFormat=cobertura \
+          dotnet test Zitec.Tests.csproj --no-build --configuration Debug `
+            /p:CollectCoverage=true `
+            /p:CoverletOutput=TestResults/coverage.json `
+            /p:CoverletOutputFormat=cobertura `
             /p:ExcludeByAttribute="GeneratedCodeAttribute"
 
       - name: Baixar ReportGenerator
