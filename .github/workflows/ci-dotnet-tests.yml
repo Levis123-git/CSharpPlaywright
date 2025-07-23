@@ -25,8 +25,14 @@ jobs:
       - name: Compilar o projeto
         run: dotnet build --configuration Debug
 
+      - name: Instalar ferramenta CLI do Playwright
+        run: dotnet tool install --global Microsoft.Playwright.CLI
+
+      - name: Adicionar tools ao PATH
+        run: echo "$env:USERPROFILE\.dotnet\tools" | Out-File -Append -Encoding ascii $env:GITHUB_PATH
+
       - name: Instalar navegadores do Playwright
-        run: pwsh "$(Get-ChildItem -Path ./bin/Debug/net*/playwright.ps1 -Recurse | Select-Object -First 1).FullName" install
+        run: playwright install
 
       - name: Rodar testes e gerar TRX
         run: dotnet test --logger "trx;LogFileName=resultado.trx" --results-directory TestResults
