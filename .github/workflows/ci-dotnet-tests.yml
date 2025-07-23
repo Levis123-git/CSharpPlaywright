@@ -25,7 +25,10 @@ jobs:
       - name: Compilar solução
         run: dotnet build --configuration Debug
 
-      - name: Rodar testes e gerar arquivo TRX
+      - name: Instalar browsers do Playwright
+        run: pwsh bin/Debug/net8.0/playwright.ps1 install
+
+      - name: Rodar testes e gerar TRX
         run: dotnet test --no-build --configuration Debug --logger "trx;LogFileName=resultado.trx" --results-directory TestResults
 
       - name: Instalar ReportGenerator
